@@ -1,59 +1,90 @@
 .clients{
-    display: flex;
-    flex-wrap: nowrap;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 1200px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+      }
 }
 
 .client__title{
     color: $title-text-color;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 28px;
+    line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+      }
 }
 
 .client-list {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    grid-gap: 30px;
   }
 
-.client-list__item{
-    margin-right: 30px;
-    border-radius: 4px;
-    width: 170px;
-    height: 92px;
 
-
-&:last-child{
-    margin-right: 0;
+.customers{
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: 1200px) {
+      flex-wrap: nowrap;
+    }
 }
+
+.client-list__item{
+    height: 90px;
+
+    transition: border-color $time-transition $cubic,
+      color $time-transition $cubic;
+  
+    &:focus,
+    &:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+  
+    @media screen and (max-width: 767px) {
+      width: 210px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 226px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 170px;
+    }
 }
 
 .company__link{
     display: flex;
-    align-items: center;
     justify-content: center;
-    outline: transparent;
-    width: 170px;
-    height: 90px;
-    fill: $icon-color;
-    border: 1px solid rgba(175, 177, 184, 1);
-    border-radius: 6px;
-    border-color: $icon-color;
-    box-shadow: none;
-    transition: border-color $time-transition $cubic,
-      fill $time-transition $cubic;
-
+    align-items: center;
+    
+    border: 1px solid #afb1b8;
+    color: #afb1b8;
+    background-color: #fff;
+    padding: 16px 32px;
   
-
-&:hover,
-&:focus{
-    fill: $accent-color; 
-    border-color: $accent-color; 
+    transition: border-color $time-transition $cubic,
+      color $time-transition $cubic;
+  
+    &:focus,
+    &:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+  
+    @media screen and (min-width: 1200px) {
+      width: 170px;
+    }
 }
+
+.company-icon{
+    fill: currentColor; 
 }
